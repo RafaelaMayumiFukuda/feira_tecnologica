@@ -59,7 +59,7 @@ $verif->logout();
         </div>
       </div>
       <!--API DO GOOGLE-->
-      <!--Codado por Guilherme Solon, Gustavo Rangel (Turma A) e Miguel Luiz Sommerfeld (Turma B) - 3°F-->
+      <!--Codado por Guilherme Solon e Miguel Luiz Sommerfeld (Turma B) - 3°F-->
 
       <script src="https://accounts.google.com/gsi/client" async defer></script>
 
