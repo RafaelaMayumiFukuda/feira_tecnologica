@@ -1,13 +1,10 @@
 <?php
+#Modificado por Miguel Luiz Sommerfeld às 15:17 no dia 11/05/2025 - Team Leader (Turma B) 
+require_once 'connect.php';
 session_start();
 
 $tipo = $_POST['tipo'] ?? $_GET['tipo'] ?? '';
 $valor = $_POST['valor'] ?? $_GET['valor'] ?? '';
-
-$link = mysqli_connect("localhost", "root", "", "Feira");
-if (!$link) {
-    exit('Erro na conexão com o banco.');
-}
 
 if ($tipo === 'local') {
     $_SESSION['local'] = $valor;
@@ -42,15 +39,23 @@ if ($tipo === 'stands') {
     $local = $_SESSION['local'] ?? '';
     $sala = $_SESSION['sala'] ?? $local; // se sala não foi escolhida, usa o próprio local
 
-    $query = "SELECT posicao, nome_stand FROM stand WHERE bloco = '$local' AND sala = '$sala'";
-    $res = mysqli_query($link, $query);
-    if (!$res) {
+    //Adicionando Prepared Statements, e prevenindo SQL Injection
+    $query = "SELECT posicao, nome_stand FROM stand WHERE bloco = (?) AND sala = (?)";
+    $stmt = $mysqli->prepare($query);
+    
+    if (!$stmt) {
         echo "Erro ao buscar stands.";
         exit;
+    } else {
+        $stmt->bind_param("ss", $local, $sala);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+        $stmt->close();   
     }
 
     $stands = [];
-    while ($row = mysqli_fetch_assoc($res)) {
+    while ($row = $result->fetch_assoc()) {
         $stands[$row['posicao']] = $row['nome_stand'];
     }
 
