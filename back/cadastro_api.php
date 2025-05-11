@@ -1,7 +1,7 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
 require_once 'connect.php';
-require_once 'classes/verificar_campos.php';
+require_once 'classes/VerificarCampos.php';
 
 $dataJSON = file_get_contents("php://input");
 $data = json_decode($dataJSON, true);
@@ -10,7 +10,7 @@ $nome = $data['nomeGoogle'];
 $email = $data['emailGoogle'];
 $data_nascimento = $data['dataNascGoogle'];
 
-$verif = new verificarCampos($mysqli);
+$verif = new VerificarCampos($mysqli);
 $verif->verificarNome($nome);
 $verif->verificarEmail($email);
 $verif->verificarDataDeNascimento($data_nascimento);

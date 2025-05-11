@@ -1,9 +1,9 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
 require_once 'connect.php';
-require_once 'classes/verificar_campos.php';
+require_once 'classes/VerificarCampos.php';
 
-$verif = new verificarCampos($mysqli);
+$verif = new VerificarCampos($mysqli);
 $email = $_POST['emailuser'];
 $senha = $_POST['passuser'];
 

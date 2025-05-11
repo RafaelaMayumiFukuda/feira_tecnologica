@@ -1,6 +1,6 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
-class logout{
+class Logout{
 
     public function logout(){
         if(!isset($_SESSION)){

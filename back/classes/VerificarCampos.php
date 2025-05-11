@@ -1,7 +1,7 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
 require_once '../back/connect.php';
-class verificarCampos{
+class VerificarCampos{
     private $mysqli;
 
     public function __construct($mysqli){

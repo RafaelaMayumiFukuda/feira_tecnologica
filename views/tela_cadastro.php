@@ -1,8 +1,8 @@
 <?php
 require_once '../back/connect.php';
-require_once '../back/classes/logout.php';
+require_once '../back/classes/Logout.php';
 
-$verif = new logout();
+$verif = new Logout();
 $verif->logout();
 ?>
 <!DOCTYPE html>
