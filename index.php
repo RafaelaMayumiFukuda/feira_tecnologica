@@ -6,7 +6,7 @@ header('Location: views/tela_home.php');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Inicio</title>
   </head>
   <body
@@ -18,9 +18,9 @@ header('Location: views/tela_home.php');
     "
   >
     <header>
-      <img src="img/mcm-logo.png" alt="logo">
+      <img src="assets/img/mcm-logo.png" alt="logo">
       <h1>Inicio</h1>
-      <img src="img/cps-logo.png" alt="logo">
+      <img src="assets/img/cps-logo.png" alt="logo">
     </header>
     <main>
       <div class="home-holder">

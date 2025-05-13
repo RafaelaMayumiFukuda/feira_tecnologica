@@ -9,22 +9,22 @@ $verif->logout();
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
   </head>
 
   <body
     style="
-      background-image: url('../img/bg-azul.jpg');
+      background-image: url('../assets/img/bg-azul.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;">
     <header>
-      <img src="../img/mcm-logo.png" alt="logo" />
+      <img src="../assets/img/mcm-logo.png" alt="logo" />
       <!-- Adicione o caminho correto para o logotipo -->
       <h1>Cadastro</h1>
-      <img src="../img/cps-logo.png" alt="logo" />
+      <img src="../assets/img/cps-logo.png" alt="logo" />
       <!-- Adicione o caminho correto para o logotipo -->
     </header>
     <main>

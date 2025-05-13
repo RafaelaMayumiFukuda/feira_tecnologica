@@ -17,21 +17,21 @@ if(session_status() === PHP_SESSION_NONE){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <title>Home</title>
   </head>
   <body
     style="
-      background-image: url('../img/bg-roxo.jpg');
+      background-image: url('../assets/img/bg-roxo.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     "
   >
     <header>
-      <img src="../img/mcm-logo.png" alt="logo" />
+      <img src="../assets/img/mcm-logo.png" alt="logo" />
       <h1>Inicio</h1>
-      <img src="../img/cps-logo.png" alt="logo" />
+      <img src="../assets/img/cps-logo.png" alt="logo" />
     </header>
     <main>
       <div class="home-holder">
@@ -41,7 +41,7 @@ if(session_status() === PHP_SESSION_NONE){
           echo "Bem-vindo " . $_SESSION['nome'] . "!";
         }
         ?>
-          <a href="#" class="btn-1 btn"
+          <a href="tela_mapa.php" class="btn-1 btn"
             ><p>Mapa</p>
             <div class="dots-1">&gt;</div></a
           >
