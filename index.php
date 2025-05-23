@@ -41,7 +41,6 @@ $logout->logout();
             <p>Anônimo</p>
             <div class="dots-3">&gt;</div>
           </a>
-          <a href="" class="avaliar"><strong>AVALIE-NOS AQUI!</strong></a>
         </div>
       </div>
     </main>

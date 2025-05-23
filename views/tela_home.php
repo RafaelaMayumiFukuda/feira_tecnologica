@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../assets/css/style.css"/>
-    <title>Inicio</title>
+    <title>Home</title>
   </head>
   <body
     style="
@@ -62,7 +62,7 @@ session_start();
             <p>Créditos</p>
             <div class="dots-2">&gt;</div>
           </a>
-          <a href="" class="avaliar"><strong>AVALIE-NOS AQUI!</strong></a>
+          <a href="tela_feedback.php" class="avaliar"><strong>AVALIE-NOS AQUI!</strong></a>
         </div>
       </div>
     </main>
