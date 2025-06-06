@@ -10,7 +10,7 @@ if(empty($dataJSON) && empty($data)){
     $email = $data['emailGoogle'];
 }
 
-$query = "SELECT id_cadastro, nome FROM cadastro WHERE email = ?";
+$query = "SELECT id_users, nome FROM tbl_users WHERE email = ?";
 $stmt = $mysqli->prepare($query);
 $stmt->bind_param("s", $email);
 $stmt->execute();

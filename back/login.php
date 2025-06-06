@@ -10,7 +10,7 @@ $senha = $_POST['passuser'];
 $verif->verificarEmail($email);
 $verif->verificarSenha($senha);
 
-$consulta = "SELECT id_cadastro, nome, senha FROM cadastro WHERE email = ?";
+$consulta = "SELECT id_users, nome, senha FROM tbl_users WHERE email = ?";
 $stmt = $mysqli->prepare($consulta);
 $stmt->bind_param("s", $email);
 $stmt->execute();

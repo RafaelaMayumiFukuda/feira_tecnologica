@@ -17,7 +17,7 @@ $verif->verificarDataDeNascimento($data_nascimento);
 
 if(!empty($nome) && !empty($email) && !empty($data_nascimento)){
     if(isset($email)){
-        $query = "SELECT email FROM cadastro WHERE email = ?";
+        $query = "SELECT email FROM tbl_users WHERE email = ?";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -30,7 +30,7 @@ if(!empty($nome) && !empty($email) && !empty($data_nascimento)){
             echo json_encode($mensagem);
             exit();
         }else{
-            $query = "INSERT INTO cadastro (nome, email, data_nasc) VALUES (?, ?, ?)";
+            $query = "INSERT INTO tbl_users (nome, email, data_nasc) VALUES (?, ?, ?)";
             $stmt = $mysqli->prepare($query);
             $stmt->bind_param("sss", $nome, $email, $data_nascimento);
             $stmt->execute();
