@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comentario = trim($comentario) === '' ? null : $comentario;
 
     //Verifica se o usuário já enviou um comentário ou nota
-    $select = "SELECT id FROM tb_feedback WHERE id_user = ?";
+    $select = "SELECT id_feedback FROM tb_feedback WHERE id_users = ?";
     $stmt = $mysqli->prepare($select);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $query = "INSERT INTO tb_feedback (id_user, nota, comentario) VALUES (?, ?, ?)";
+    $query = "INSERT INTO tb_feedback (id_users, nota, comentario) VALUES (?, ?, ?)";
     $stmt = $mysqli->prepare($query);
     if ($stmt) {
         $stmt->bind_param("iis", $id, $nota, $comentario);
