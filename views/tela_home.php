@@ -34,8 +34,11 @@ session_start();
             <div class="dots-1">&gt;</div>
           </a>
 
-          <a href="tela_projetos.php" class="btn-1 btn">
+          <a href="#" onclick="document.getElementById('formFiltro').submit();" class="btn-1 btn">
             <p>Projetos</p>
+            <form action="tela_projetos.php" method="post" id="formFiltro">
+                <input type="hidden" name="filtroProjetos" value="1">
+            </form>
             <div class="dots-1">&gt;</div>
           </a>
 
