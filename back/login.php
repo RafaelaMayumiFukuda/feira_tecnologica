@@ -4,11 +4,13 @@ require_once 'connect.php';
 require_once 'classes/VerificarCampos.php';
 
 $verif = new VerificarCampos($mysqli);
-$email = $_POST['emailuser'];
-$senha = $_POST['passuser'];
+$email = trim(strtolower($_POST['emailuser']));
+$senha = trim($_POST['passuser']);
 
 $verif->verificarEmail($email);
 $verif->verificarSenha($senha);
+$verif->verificarEspacoEmBranco($email);
+$verif->verificarEspacoEmBranco($senha);
 
 $consulta = "SELECT id_users, nome, senha FROM tbl_users WHERE email = ?";
 $stmt = $mysqli->prepare($consulta);
