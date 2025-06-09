@@ -3,7 +3,7 @@
 class Logout{
 
     public function logout(){
-        if(!isset($_SESSION)){
+        if(session_status() === PHP_SESSION_NONE){
             session_start();
         }
 
@@ -11,7 +11,7 @@ class Logout{
     }
 
     public function logoutDirecionado(){
-        if(!isset($_SESSION)){
+        if(session_status() === PHP_SESSION_NONE){
             session_start();
         };
 

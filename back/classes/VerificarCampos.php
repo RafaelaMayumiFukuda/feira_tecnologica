@@ -49,7 +49,8 @@ class VerificarCampos{
     }
 
     public function verificarEmailExistente($email){
-       $sql_query = "SELECT email FROM cadastro WHERE email = ?";
+       $email = trim(strtolower($email));
+       $sql_query = "SELECT email FROM tbl_users WHERE email = ?";
        $stmt = $this->mysqli->prepare($sql_query);
        $stmt->bind_param("s", $email);
        $stmt->execute();
@@ -60,6 +61,14 @@ class VerificarCampos{
         echo "<script>window.history.back();</script>";
         exit();
        }
+    }
+
+    public function verificarEspacoEmBranco($campo) {
+        if (strpos($campo, " ") == true) {
+            echo "<script>alert('Os campos e-mail e senha não podem conter espaços em branco!')</script>";
+            echo "<script>window.history.back()</script>";
+            exit();
+        }
     }
 }
 ?>
