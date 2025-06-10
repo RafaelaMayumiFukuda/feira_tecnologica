@@ -1,5 +1,5 @@
 <?php
-#Modificado por Miguel Luiz Sommerfeld às 02:06 no dia 09/06/2025 - Team Leader (Turma B)
+#Modificado por Miguel Luiz Sommerfeld às 16:53 no dia 10/06/2025 - Team Leader (Turma B)
 require_once '../back/connect.php';
 
 // Arrays para os selects
