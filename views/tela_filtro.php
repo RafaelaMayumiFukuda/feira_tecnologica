@@ -14,11 +14,11 @@ $filtroOds = trim($_GET['ods'] ?? null);
 $filtroBloco = trim($_GET['bloco'] ?? null);
 
 // Query com filtros
-$query = "SELECT DISTINCT a.nome, a.rm, a.serie, a.curso, p.titulo_projeto, p.descricao_projeto,
+$query = "SELECT DISTINCT a.serie, a.curso, p.id_projetos, p.titulo_projeto, p.descricao_projeto,
           p.ods, p.bloco, p.sala, p.stand, p.prof_orientador
-          FROM tb_integrantes AS i
-          INNER JOIN tbl_alunos AS a ON i.id_aluno = a.id_aluno
-          INNER JOIN tbl_projetos AS p ON i.id_projetos = p.id_projetos";
+          FROM tbl_projetos AS p
+          INNER JOIN tb_integrantes AS i ON p.id_projetos = i.id_projetos
+          INNER JOIN tbl_alunos AS a ON a.id_aluno = i.id_aluno";
 
 $params = [];
 $types = "";
@@ -141,14 +141,26 @@ $result = $stmt->get_result();
         <?php
         if ($result->num_rows > 0) :
             while ($row = $result->fetch_assoc()) :
+                $queryAluno = "SELECT nome FROM tb_integrantes as i
+                            INNER JOIN tbl_projetos AS p ON p.id_projetos = i.id_projetos
+                            INNER JOIN tbl_alunos as a ON a.id_aluno = i.id_aluno
+                            WHERE i.id_projetos = ?";
+                $stmt = $mysqli->prepare($queryAluno);
+                $stmt->bind_param("i", $row['id_projetos']);
+                $stmt->execute();
+                $resultAlunos = $stmt->get_result();
         ?>
             <div class="card">
                 <h3><?= $row['titulo_projeto'] ?></h3>
                 <p><strong>Curso:</strong> <?= strtoupper($row['curso']) ?></p>
                 <p><strong>Série:</strong> <?= ucfirst($row['serie']) ?></p>
                 <p><strong>Bloco:</strong> <?= $row['bloco'] ?></p>
-                <p><strong>Aluno:</strong> <?= htmlspecialchars($row['nome']) ?></p>
-                <p><strong>RM:</strong> <?= htmlspecialchars($row['rm']) ?></p>
+                <p><strong>Aluno:</strong> <?php
+                    while ($rowAluno = $resultAlunos->fetch_assoc()) {
+                        $aluno = $rowAluno['nome'];
+                        echo $aluno . "; ";
+                    }
+                ?></p>
                 <p><strong>ODS:</strong> <?= htmlspecialchars($row['ods']) ?></p>
                 <p><strong>Orientador:</strong> <?= htmlspecialchars($row['prof_orientador']) ?></p>
                 <p><strong>Posição no Ranking:</strong> <?= $row['posicao'] ?? '?' ?></p>
