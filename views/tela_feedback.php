@@ -24,7 +24,7 @@
     <form id="form" action="../back/feedback.php" method="POST">
       <label for="nota">Avaliação:</label>
       <select id="nota" name="nota" required>
-        <option value="" disabled>Selecione</option>
+        <option value="" disabled selected>Selecione</option>
         <option value="5">⭐⭐⭐⭐⭐</option>
         <option value="4">⭐⭐⭐⭐</option>
         <option value="3">⭐⭐⭐</option>
