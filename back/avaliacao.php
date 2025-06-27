@@ -1,4 +1,5 @@
 <?php
+//Codado por Miguel Luiz Sommerfeld - 3°F Turma B
 require_once 'connect.php';
 session_start();
 
@@ -47,6 +48,9 @@ if (isset($voto) && isset($id_projeto)) {
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param("sisii", $data, $voto, $comentario, $id_user, $id_projeto);
     $stmt->execute();
+
+    echo "<script>alert('Agradecemos pela sua avaliação!')</script>";
+    echo "<script>window.history.back();</script>";
 } else {
     echo "<script>alert('Não foi possível enviar a sua avaliação. Tente novamente.')</script>";
     echo "<script>window.history.back()</script>";

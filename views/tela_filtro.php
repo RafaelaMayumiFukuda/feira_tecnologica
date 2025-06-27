@@ -15,10 +15,12 @@ $filtroBloco = trim($_GET['bloco'] ?? null);
 
 // Query com filtros
 $query = "SELECT DISTINCT a.serie, a.curso, p.id_projetos, p.titulo_projeto, p.descricao_projeto,
-          p.ods, p.bloco, p.sala, p.stand, p.prof_orientador
+          p.bloco, p.sala, p.stand, p.prof_orientador
           FROM tbl_projetos AS p
           INNER JOIN tb_integrantes AS i ON p.id_projetos = i.id_projetos
-          INNER JOIN tbl_alunos AS a ON a.id_aluno = i.id_aluno";
+          INNER JOIN tbl_alunos AS a ON a.id_aluno = i.id_aluno
+          INNER JOIN ods_projeto AS op ON op.id_projetos = p.id_projetos
+          INNER JOIN tbl_ods AS o ON o.id_ods = op.id_ods";
 
 $params = [];
 $types = "";
@@ -42,7 +44,7 @@ if ($filtroSerie) {
 }
 
 if ($filtroOds) {
-    $query .= " AND p.ods LIKE ?";
+    $query .= " AND o.ods LIKE ?";
     $params[] .= "%" . $filtroOds . "%";
     $types .= "s";
 }
@@ -149,6 +151,15 @@ $result = $stmt->get_result();
                 $stmt->bind_param("i", $row['id_projetos']);
                 $stmt->execute();
                 $resultAlunos = $stmt->get_result();
+
+                $queryOds = "SELECT ods FROM ods_projeto AS op
+                            INNER JOIN tbl_projetos as p ON op.id_projetos = p.id_projetos
+                            INNER JOIN tbl_ods AS o ON o.id_ods = op.id_ods
+                WHERE op.id_projetos = ?";
+                $stmtOds = $mysqli->prepare($queryOds);
+                $stmtOds->bind_param("i", $row['id_projetos']);
+                $stmtOds->execute();
+                $resultOds = $stmtOds->get_result();
         ?>
             <div class="card">
                 <h3><?= $row['titulo_projeto'] ?></h3>
@@ -158,10 +169,15 @@ $result = $stmt->get_result();
                 <p><strong>Aluno:</strong> <?php
                     while ($rowAluno = $resultAlunos->fetch_assoc()) {
                         $aluno = $rowAluno['nome'];
-                        echo $aluno . "; ";
+                        echo htmlspecialchars($aluno) . "; ";
                     }
                 ?></p>
-                <p><strong>ODS:</strong> <?= htmlspecialchars($row['ods']) ?></p>
+                <p><strong>ODS:</strong> <?php
+                    while ($rowOds = $resultOds->fetch_assoc()) {
+                        $ods = $rowOds['ods'];
+                        echo htmlspecialchars($ods) . "; ";
+                    }
+                ?></p>
                 <p><strong>Orientador:</strong> <?= htmlspecialchars($row['prof_orientador']) ?></p>
                 <p><strong>Posição no Ranking:</strong> <?= $row['posicao'] ?? '?' ?></p>
             </div>
