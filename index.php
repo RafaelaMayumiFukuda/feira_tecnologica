@@ -22,7 +22,7 @@ $logout->logout();
 <body class="TelaInicio">
 
     <header>
-      <div class="menu-toggle" id="mobile-menu">
+      <div id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -39,8 +39,8 @@ $logout->logout();
       <div>
         <div class="ORGmainInfo">
           <p class="info">Usuário</p>
-          <button>Entrar sem conta</button>
-          <button>Entrar</button>
+          <a href="views/tela_home.php"><button>Entrar sem conta</button></a>
+          <a href=views/tela_login.php><button>Entrar</button></a>
         </div>
         <div class="ORGmainInfo">
           <p class="info">Informativo</p>
@@ -54,34 +54,5 @@ $logout->logout();
         </div>
       </div>
     </main>
-
-    <div id="mySideMenu" class="side-menu">
-      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-      <a href="#">Mapa</a>
-      <a href="#">Avaliação</a>
-      <a href="#">Projetos</a>
-      <a href="#">Ranking</a>
-      <a href="#">Cursos</a>
-      <a href="#">Sobre a Etec</a>
-      <a href="#">Configurações</a>
-    </div>
-
-    <script>
-      document
-        .getElementById("mobile-menu")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-          openMenu();
-        });
-
-      function openMenu() {
-        document.getElementById("mySideMenu").style.width = "250px";
-      }
-
-      function closeMenu() {
-        document.getElementById("mySideMenu").style.width = "0";
-        document.getElementById("mobile-menu").classList.remove("active");
-      }
-    </script>
 </body>
 </html>
