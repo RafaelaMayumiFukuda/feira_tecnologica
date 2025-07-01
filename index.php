@@ -20,7 +20,6 @@ $logout->logout();
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body class="TelaInicio">
-
     <header>
       <div id="mobile-menu">
         <span class="bar"></span>
@@ -34,23 +33,22 @@ $logout->logout();
         <h1>Inicio</h1>
       </div>
     </header>
-
     <main>
       <div>
         <div class="ORGmainInfo">
           <p class="info">Usuário</p>
-          <a href="views/tela_home.php"><button>Entrar sem conta</button></a>
-          <a href=views/tela_login.php><button>Entrar</button></a>
+          <a href="views/tela_home.php">Entrar sem conta</a>
+          <a href="views/tela_login.php">Entrar</a>
         </div>
         <div class="ORGmainInfo">
           <p class="info">Informativo</p>
-          <button>Etec - MCM</button>
-          <button>Vestibulinho</button>
+          <a href="https://etecmcm.cps.sp.gov.br/">Etec - MCM</a>
+          <a href="#">Vestibulinho</a>
         </div>
         <div class="ORGmainInfo">
           <p class="info">Utilitários</p>
-          <button>Acessibilidade</button>
-          <button>Créditos</button>
+          <a href="views/tela_acessibilidade.php">Acessibilidade</a>
+          <a href="views/tela_creditos.php">Créditos</a>
         </div>
       </div>
     </main>

@@ -160,7 +160,7 @@ h1 {
     font-size: var(--FONTTituloSIZE);
 }
 
-button {
+button, a {
     --glow-color: rgb(255, 255, 255);
     --glow-spread-color: rgb(255, 255, 255);
     --enhanced-glow-color: rgb(255, 255, 255);
@@ -170,6 +170,8 @@ button {
     border: 0.25em solid white;
     padding: 1em 3em;
     color: var(--btn-color);
+    font-family: var(--FONTBTNSMenu);
+    text-align: center;
     font-size: 15px;
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.6);
@@ -179,9 +181,10 @@ button {
     position: relative;
     transition: all 0.2s;
     border-radius: 4px;
+    text-decoration: none;
 }
 
-button::after {
+button::after{
     pointer-events: none;
     content: "";
     position: absolute;
@@ -194,6 +197,15 @@ button::after {
     transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
 }
 
+a:hover {
+    color: var(--btn-color);
+    border: 0.25em solid var(--glow-spread-color);
+    background-color: transparent;
+    box-shadow: 0 0 10px 4px var(--glow-color),
+        inset 0 0 10px 4px var(--glow-color);
+    color: var(--glow-color);
+}
+
 button:hover {
     color: var(--btn-color);
     border: 0.25em solid var(--glow-spread-color);
@@ -201,6 +213,11 @@ button:hover {
     box-shadow: 0 0 10px 4px var(--glow-color),
         inset 0 0 10px 4px var(--glow-color);
     color: var(--glow-color);
+}
+
+a:active {
+    box-shadow: 0 0 5px 2px var(--glow-color),
+        inset 0 0 5px 2px var(--glow-color);
 }
 
 button:active {
@@ -211,7 +228,7 @@ button:active {
 /* Responsividade */
 @media (min-width: 768px) {
     body.TelaInicio {
-        background-image: url(/img/Início.jpg);
+        background-image: url(../img/inicio.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -219,7 +236,7 @@ button:active {
 
 @media (min-width: 375px) and (max-width: 768px) {
     body.TelaInicio {
-        background-image: url(/img/Início.jpg);
+        background-image: url(../img/inicio.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -227,7 +244,7 @@ button:active {
 
 @media (max-width: 375px) {
     body.TelaInicio {
-        background-image: url(assets/img/Início.jpg);
+        background-image: url(../img/inicio.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
