@@ -227,7 +227,7 @@ button:active {
 
 @media (max-width: 375px) {
     body.TelaInicio {
-        background-image: url(/img/Início.jpg);
+        background-image: url(assets/img/Início.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
