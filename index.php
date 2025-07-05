@@ -37,18 +37,24 @@ $logout->logout();
       <div>
         <div class="ORGmainInfo">
           <p class="info">Usuário</p>
-          <a href="views/tela_home.php">Entrar sem conta</a>
-          <a href="views/tela_login.php">Entrar</a>
+          <div class="a0">
+            <a href="views/tela_home.php">Entrar sem conta</a>
+            <a href="views/tela_login.php">Entrar</a>
+          </div>
         </div>
         <div class="ORGmainInfo">
           <p class="info">Informativo</p>
-          <a href="https://etecmcm.cps.sp.gov.br/">Etec - MCM</a>
-          <a href="#">Vestibulinho</a>
+          <div class="a0">
+            <a href="https://etecmcm.cps.sp.gov.br/" target="blank">Etec - MCM</a>
+            <a href="#">Vestibulinho</a>
+          </div>
         </div>
         <div class="ORGmainInfo">
           <p class="info">Utilitários</p>
-          <a href="views/tela_acessibilidade.php">Acessibilidade</a>
-          <a href="views/tela_creditos.php">Créditos</a>
+          <div class="a0">
+            <a href="#">Acessibilidade</a>
+            <a href="#">Créditos</a>
+          </div>
         </div>
       </div>
     </main>
