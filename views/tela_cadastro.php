@@ -15,25 +15,27 @@ $verif->logout();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/cadastro.css" />
+
+  
   <title>Tela de Cadastro</title>
 </head>
 <body class="TelaCadastro">
   <div class="container">
     <div class="top">
-      <img src="img/etecmcm.png" alt="Logo" class="logo" />
+      <img src="../assets/img/etecmcm.png" alt="Logo" class="logo" />
     </div>
 
     <div class="form-container">
-      <form id="cadastroForm">
+      <form action="../back/cadastro.php" method="post" id="cadastroForm">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+        <input type="text" id="nome" name="nameuser" placeholder="Digite seu nome" required />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu email" required />
+        <input type="email" id="email" name="emailuser" placeholder="Digite seu email" required />
 
         <label for="senha">Senha</label>
         <div class="senha-container">
-          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required />
+          <input type="password" id="senha" name="passuser" placeholder="Digite sua senha" minlength="8" required />
           <span class="olho" id="olho1" onclick="toggleSenha('senha', 'olho1')">😐</span>
         </div>
 
@@ -44,20 +46,17 @@ $verif->logout();
         </div>
 
         <label for="data-nascimento">Data de Nascimento</label>
-        <input type="date" id="data-nascimento" name="data-nascimento" required />
+        <input type="date" id="data-nascimento" name="birthuser" required />
 
         <div class="botoes">
-          <button type="button" class="google">
-            Cadastrar com <img src="img/LogoGoogle.png" alt="Google" />
-          </button>
+          <div class="g_id_signin" data-type="standard"></div>
           <button type="submit">Cadastrar</button>
         </div>
       </form>
-      <div class="g_id_signin" data-type="standard"></div>
     </div>
 
     <div class="login-container">
-      <button class="login-invertido" onclick="window.location.href='TelaLogin.html'">
+      <button class="login-invertido" onclick="window.location.href='tela_login.php'">
         Já tenho uma conta
       </button>
     </div>
@@ -76,10 +75,12 @@ $verif->logout();
         data-callback="handleCredentialResponse">
     </div>
     <!-- Aqui ele vai te pedir para completar o cadastro conforme os dados requisitados  -->
-    <div id="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+    <div id="modal" class="form-container" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px;">
+      <div class="senha-container">
         <h2>Complete seu cadastro:</h2>
         <label>Digite sua data de nascimento: <input type="date" id="dataNasc"></label><br>
         <button onclick="salvarDados()">Salvar</button>
+      </div>
     </div>
     
     <script>
@@ -181,11 +182,6 @@ $verif->logout();
 
       iniciarPiscar('olho1');
       iniciarPiscar('olho2');
-
-      document.getElementById('cadastroForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        window.location.href = 'login.html';
-      });
   </script>
 </body>
 </html>
