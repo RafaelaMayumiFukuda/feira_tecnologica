@@ -6,70 +6,65 @@ $verif = new Logout();
 $verif->logout();
 ?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-  </head>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body
-    style="
-      background-image: url('../assets/img/bg-amarelo.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;">
-    <header>
-      <img src="../assets/img/mcm-logo.png" alt="logo" />
-      <!-- Adicione o caminho correto para o logotipo -->
-      <h1>Entrar</h1>
-      <img src="../assets/img/cps-logo.png" alt="logo" />
-      <!-- Adicione o caminho correto para o logotipo -->
-    </header>
-    <main>
-      <a href="tela_home.php" class="voltar">Voltar</a>
-      <div class="lg-holder">
-        <div class="entrar">
-          <h2>Entrar</h2>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/login.css" />
+
+  <title>Tela de Login</title>
+</head>
+<body class="TelaLogin">
+  <div class="container">
+    <div class="top">
+      <img src="../assets/img/etecmcm.png" alt="Logo" class="logo" />
+    </div>
+
+    <div class="form-container">
+      <form action="../back/login.php" method="post" id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="emailuser" placeholder="Digite seu email" required />
+
+        <label for="senha">Senha</label>
+        <div class="senha-container">
+          <input type="password" id="senha" name="passuser" placeholder="Digite sua senha" required />
+          <span class="olho" id="olho" onclick="toggleSenha()">😐</span>
         </div>
-        <div class="lg-container">
-          <form action="../back/login.php" method="post" class="fm-holder">
-            <div>
-              <h2>E-Mail</h2>
-              <input type="email" name="emailuser" required>
-            </div>
-            <div>
-              <h2>Senha</h2>
-              <input type="password" name="passuser" required>
-            </div>
-            <div class="ct-et-holder">
-              <a href="tela_cadastro.php" style="background-color: var(--purple-first-color)">
-                <div class="dots-lg" style="background-color: var(--purple-second-color)"></div>
-                <p style="color: white">Cadastrar</p>
-              </a>
-              <button
-                type="submit" style="background-color: var(--yellow-first-color)">
-                <p style="color: black">Entrar</p>
-                <div class="dots-lg" style="background-color: var(--yellow-second-color)"></div>
-              </button>
-            </div>
-          </form>
+
+        <!--  aqui é necessário trocar o caminho para puxar a página certa  -->
+        <a href="#" class="esqueci">Esqueci minha senha</a>
+
+        <div class="botoes">
           <div class="g_id_signin" data-type="standard"></div>
+          <button type="submit">Entrar</button>
         </div>
-      </div>
-      <!--API DO GOOGLE-->
-      <!--Codado por Guilherme Solon e Miguel Luiz Sommerfeld (Turma B) - 3°F-->
+      </form>
+    </div>
 
-      <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div class="cadastrar-container">
+      <button class="cadastrar" onclick="window.location.href='tela_cadastro.php'">
+        Cadastrar
+      </button>
+    </div>
+  </div>
 
-      <div id="g_id_onload"
-          data-client_id="471307138333-njh18r1rajueo4auooa4mtutban1p6dt.apps.googleusercontent.com"
-          data-auto_prompt="false"
-          data-callback="handleCredentialResponse">
-      </div>
+  <div class="login-texto">LOGIN</div>
+  <!--API DO GOOGLE-->
+  <!--Codado por Guilherme Solon e Miguel Luiz Sommerfeld (Turma B) - 3°F-->
 
-      <script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <div id="g_id_onload"
+      data-client_id="471307138333-njh18r1rajueo4auooa4mtutban1p6dt.apps.googleusercontent.com"
+      data-auto_prompt="false"
+      data-callback="handleCredentialResponse">
+  </div>
+
+  <script>
       let name = "";
       let email = "";
 
@@ -115,7 +110,45 @@ $verif->logout();
           const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
           return JSON.parse(atob(base64));
       }
-      </script>
-    </main>
-  </body>
+  </script>
+  <script>
+    const olho = document.getElementById('olho');
+    const inputSenha = document.getElementById('senha');
+    let piscando = true;
+    let intervaloPiscar;
+
+    function piscarEmoji() {
+      if (!piscando) return;
+      olho.textContent = '😑';
+      setTimeout(() => {
+        if (piscando) olho.textContent = '😐';
+      }, 80);
+    }
+
+    function iniciarPiscar() {
+      olho.textContent = '😐';
+      piscando = true;
+      intervaloPiscar = setInterval(piscarEmoji, 2000);
+    }
+
+    function pararPiscar() {
+      piscando = false;
+      clearInterval(intervaloPiscar);
+    }
+
+    function toggleSenha() {
+      if (inputSenha.type === 'password') {
+        inputSenha.type = 'text';
+        pararPiscar();
+        olho.textContent = '😑';
+      } else {
+        inputSenha.type = 'password';
+        iniciarPiscar();
+        olho.textContent = '😐';
+      }
+    }
+
+    iniciarPiscar();
+  </script>
+</body>
 </html>

@@ -23,10 +23,25 @@
   font-family: Arial, sans-serif;
 }
 
+
+ header {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-family: var(--FONTTitulo);
+    font-size: var(--FONTTituloSIZE);
+  }
+
+
+
 body, html {
   height: 100%;
   width: 100%;
-  background-image: url('img/Login.jpg');
+  background-image: url('../img/login.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -236,4 +251,40 @@ input {
     bottom: 10px;
     right: 10px;
   }
+}
+
+
+
+/* Estilo de fundo que o body terá no Tablet */
+@media (min-width: 768px) {
+      body.telalogin {
+        background-image: url(../img/login.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @media (min-width: 375px) and (max-width: 768px) {
+      body.telalogin {
+        background-image: url(../img/login.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @media (max-width: 375px) {
+      body.telalogin {
+        background-image: url(../img/login.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    } 
+
+     main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 20px;
+    align-items: center;
+    gap: 20px;
 }
