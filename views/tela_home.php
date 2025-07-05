@@ -31,14 +31,23 @@ session_start();
     </header>
     <main>
       <div>
-        <div class="ORGmainInfo">
-          <button>Mapa</button>
-          <button>Projetos</button>
-          <button>ODS</button>
-          <button>Créditos</button>
+        <?php if(!isset($_SESSION['id'])) : ?>
+          <div class="a0">
+            <a href="tela_login.php">Entrar</a>
+          </div>
+        <?php endif; ?>
+        <div class="a0">
+            <?php if (isset($_SESSION['nome'])) {
+              echo "Seja bem-vindo(a) " . $_SESSION['nome'] . "!";
+            } ?>
+            <a href="#">Mapa</a>
+            <a href="#">Projetos</a>
+            <a href="#">ODS</a>
+            <a href="#">Créditos</a>
+          </div>
         </div>
         <div class="rateOrg">
-          <a href="">Avalie-nos</a>
+          <a href="#">Avalie-nos</a>
         </div>
       </div>
     </main>
