@@ -178,14 +178,14 @@
     </main>
 
     <div id="mySideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-        <a href="#">Mapa</a>
-        <a href="TelaAvaliacao.html">Avaliação</a>
-        <a href="TelaProjetos.html">Projetos</a>
-        <a href="TelaRanking.html">Ranking</a>
-        <a href="TelaCursos.html">Cursos</a>
-        <a href="TelaSobreEtec.html">Sobre a Etec</a>
-        <a href="TelaConfiguracoes.html">Configurações</a>
+      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+      <a href="tela_mapa.php">Mapa</a>
+      <a href="tela_avaliacao.php">Avaliação</a>
+      <a href="tela_projetos.php">Projetos</a>
+      <a href="tela_ranking.php">Ranking</a>
+      <a href="tela_cursos.php">Cursos</a>
+      <a href="tela_sobreEtec.php">Sobre a Etec</a>
+      <a href="tela_configuracoes.php">Configurações</a>
     </div>
 
     <script>

@@ -11,11 +11,6 @@
 </head>
 <body class="telaAvaliacao">
     <header>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
         <div class="ORGInfoHeader">
             <h1>Avaliação</h1>
         </div>
@@ -71,17 +66,6 @@
             <button class="avaliacao-button" id="">Enviar</button>
         </div>
     </main>
-
-    <div id="mySideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-        <a href="#">Mapa</a>
-        <a href="TelaAvaliacao.html">Avaliação</a>
-        <a href="TelaProjetos.html">Projetos</a>
-        <a href="TelaRanking.html">Ranking</a>
-        <a href="TelaCursos.html">Cursos</a>
-        <a href="TelaSobreEtec.html">Sobre a Etec</a>
-        <a href="TelaConfiguracoes.html">Configurações</a>
-    </div>
 
     <script>
         document.getElementById('mobile-menu').addEventListener('click', function() {
