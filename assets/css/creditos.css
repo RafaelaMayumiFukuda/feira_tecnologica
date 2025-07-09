@@ -41,7 +41,7 @@
   /* 2.Estilo do body e fundo     */
   
   .Creditos_body {
-    background-image: url('creditos.jpg');
+    background-image: url('../img/creditos.jpg');
     width: auto;
     font-family: Arial, sans-serif;
     color: var(--cor-texto-primario);
@@ -320,7 +320,7 @@
 /* Estilo de fundo que o body terá no Tablet */
 @media (min-width: 768px) {
       body.Creditos_body {
-        background-image: url(/assets/img/Creditos.jpg);
+        background-image: url(../img/creditos.jpg);
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -328,7 +328,7 @@
 
     @media (min-width: 375px) and (max-width: 768px) {
       body.Creditos_body {
-        background-image: url(/assets/img/Creditos.jpg);
+        background-image: url(../img/creditos.jpg);
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -336,7 +336,7 @@
 
     @media (max-width: 375px) {
       body.Creditos_body {
-        background-image: url(/assets/img/Creditos.jpg);
+        background-image: url(../img/creditos.jpg);
         background-repeat: no-repeat;
         background-size: cover;
       }
