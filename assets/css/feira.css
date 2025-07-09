@@ -165,7 +165,7 @@ h1 {
     /*Estido de fundo que o body tera no Tablet*/
     @media (min-width: 768px) {
       body.telaFeira{
-        background-image: url(/img/cursos.jpg); 
+        background-image: url(../img/cursos.jpg); 
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -173,7 +173,7 @@ h1 {
     /*Estido de fundo que o body tera no Tablet*/
     @media (min-width: 375px) and (max-width: 768px) {
       body.telaFeira{
-        background-image: url(/img/cursos.jpg); 
+        background-image: url(../img/cursos.jpg); 
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -181,7 +181,7 @@ h1 {
     /*Estido de fundo que o body tera no Celular*/
     @media (max-width: 375px) {
       body.telaFeira {
-        background-image: url(/img/cursos.jpg); 
+        background-image: url(../img/cursos.jpg); 
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -192,7 +192,7 @@ h1 {
 /* Estilo de fundo que o body terá no Tablet */
 @media (min-width: 768px) {
 body.telaRanking {
-  background-image: url(/assets/img/Início.jpg);
+  background-image: url(../img/inicio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -200,7 +200,7 @@ body.telaRanking {
 
 @media (min-width: 375px) and (max-width: 768px) {
 body.telaRanking {
-  background-image: url(/assets/img/Início.jpg);
+  background-image: url(../img/inicio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -208,7 +208,7 @@ body.telaRanking {
 
 @media (max-width: 375px) {
 body.telaRanking {
-  background-image: url(/assets/img/Início.jpg);
+  background-image: url(../img/inicio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

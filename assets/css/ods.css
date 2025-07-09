@@ -227,7 +227,7 @@ h1 {
 /* Responsividade */
 @media (min-width: 768px) {
     body.TelaOds {
-        background-image: url(../img/Inicio.jpg);
+        background-image: url(../img/inicio.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -235,7 +235,7 @@ h1 {
 
 @media (min-width: 375px) and (max-width: 768px) {
     body.TelaOds {
-        background-image: url(../img/InicioTabletEmPe.jpg);
+        background-image: url(../img/inicioTabletEmPe.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -249,7 +249,7 @@ h1 {
 
 @media (max-width: 375px) {
     body.TelaOds {
-        background-image: url(../img/InicioCelular.jpg);
+        background-image: url(../img/inicioCelular.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }

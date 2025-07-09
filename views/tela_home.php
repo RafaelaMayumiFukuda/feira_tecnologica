@@ -53,13 +53,13 @@ session_start();
     </main>
     <div id="mySideMenu" class="side-menu">
       <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-      <a href="#">Mapa</a>
-      <a href="#">Avaliação</a>
-      <a href="#">Projetos</a>
-      <a href="#">Ranking</a>
-      <a href="#">Cursos</a>
-      <a href="#">Sobre a Etec</a>
-      <a href="#">Configurações</a>
+      <a href="tela_mapa.php">Mapa</a>
+      <a href="tela_avaliacao.php">Avaliação</a>
+      <a href="tela_projetos.php">Projetos</a>
+      <a href="tela_ranking.php">Ranking</a>
+      <a href="tela_cursos.php">Cursos</a>
+      <a href="tela_sobreEtec.php">Sobre a Etec</a>
+      <a href="tela_configuracoes.php">Configurações</a>
     </div>
     <script>
       document

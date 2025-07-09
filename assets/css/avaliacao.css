@@ -171,7 +171,7 @@
       /*Estido de fundo que o body tera no Tablet*/
       @media (min-width: 768px) {
         body.telaAvaliacao {
-          background-image: url(/img/avaliação.jpg); 
+          background-image: url(../img/avaliacao.jpg); 
           background-repeat: no-repeat;
           background-size: cover;
         }
@@ -179,7 +179,7 @@
       /*Estido de fundo que o body tera no Tablet*/
       @media (min-width: 375px) and (max-width: 768px) {
         body.telaAvaliacao{
-          background-image: url(/img/avaliação.jpg); 
+          background-image: url(../img/avaliacao.jpg); 
           background-repeat: no-repeat;
           background-size: cover;
         }
@@ -187,7 +187,7 @@
       /*Estido de fundo que o body tera no Celular*/
       @media (max-width: 375px) {
         body.telaAvaliacao {
-          background-image: url(/img/avaliação.jpg); 
+          background-image: url(../img/avaliacao.jpg); 
           background-repeat: no-repeat;
           background-size: cover;
         }
