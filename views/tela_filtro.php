@@ -64,41 +64,57 @@ if ($params) {
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/filtro.css">
-    <title>Filtro de Trabalhos</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Filtrar Trabalhos</h1>
-        <form method="GET">
-            <div>
-                <label>Curso:</label>
-                <select name="curso">
-                    <option value="">Todos</option>
-                        <?php
-                        $queryCurso = "SELECT DISTINCT curso FROM tbl_alunos";
-                        $resultCurso = $mysqli->query($queryCurso);
-                        
-                        while ($row = $resultCurso->fetch_assoc()):
-                            $curso = $row['curso'];
-                        ?>
 
-                        <option value="<?= $curso ?>" <?= $filtroCurso == $curso ? 'selected' : '' ?>>
-                            <?= strtoupper($curso) ?>
-                        </option>
-                        
-                        <?php endwhile; ?>
+<body class="TelaProjetos">
+    <header>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="logo-container">
+            <img src="../assets/img/etecmcm.png" alt="Logo MCM" />
+        </div>
+        <div class="ORGInfoHeader">
+            <h1>Projetos</h1>
+        </div>
+    </header>
+
+    <main class="main-projetos">
+
+        <div class="filtros">
+            <form method="GET">
+                <select name="curso" id="curso" class="botao">
+                    <option value="" disabled selected>Curso</option>
+                    <?php
+                    $queryCurso = "SELECT DISTINCT curso FROM tbl_alunos";
+                    $resultCurso = $mysqli->query($queryCurso);
+                    
+                    while ($row = $resultCurso->fetch_assoc()):
+                        $curso = $row['curso'];
+                    ?>
+
+                    <option value="<?= $curso ?>" <?= $filtroCurso == $curso ? 'selected' : '' ?>>
+                        <?= strtoupper($curso) ?>
+                    </option>
+                    
+                    <?php endwhile; ?>
                 </select>
-            </div>
 
-            <div>
-                <label>Série:</label>
-                <select name="serie">
+                <select name="serie" id="serie" class="botao">
+                    <option value="" disabled selected>Série</option>
                     <option value="">Todas</option>
                         <?php
                         $querySerie = "SELECT DISTINCT serie FROM tbl_alunos";
@@ -113,33 +129,24 @@ $result = $stmt->get_result();
                         </option>
                         <?php endwhile; ?>
                 </select>
-            </div>
 
-            <div>
-                <label>Bloco:</label>
-                <select name="bloco">
+                <select name="bloco" id="bloco" class="botao">
                     <option value="">Todos</option>
-                    <?php foreach ($blocos as $bloco): ?>
-                        <option value="<?= $bloco ?>" <?= $filtroBloco == $bloco ? 'selected' : '' ?>>
-                            <?= $bloco ?>
-                        </option>
-                    <?php endforeach; ?>
+                        <?php foreach ($blocos as $bloco): ?>
+                            <option value="<?= $bloco ?>" <?= $filtroBloco == $bloco ? 'selected' : '' ?>>
+                                <?= $bloco ?>
+                            </option>
+                        <?php endforeach; ?>
                 </select>
-            </div>
 
-            <div>
-                <label>Nome do Aluno:</label>
-                <input type="text" name="nome" value="<?= htmlspecialchars($filtroNome ?? null) ?>">
-            </div>
+                <input type="text" name="nome" id="nome" class="botao" value="<?= htmlspecialchars($filtroNome ?? null) ?>" placeholder="Nome do Aluno:">
 
-            <div style="grid-column: span 2;">
-                <label>Tema (ODS):</label>
-                <input type="text" name="ods" value="<?= htmlspecialchars($filtroOds) ?>">
-            </div>
-            <button type="submit">Filtrar</button>
-        </form>
+                <input type="text" name="ods" id="ods" class="botao" value="" placeholder="Tema (ODS):">
+                <button type="submit" class="botao">Filtrar</button>
+            </form>
+        </div>
 
-        <h2>Resultados: <?=$result->num_rows?></h2>
+        <h2>Resultados: <?=$result->num_rows ?></h2>
         <?php
         if ($result->num_rows > 0) :
             while ($row = $result->fetch_assoc()) :
@@ -161,30 +168,89 @@ $result = $stmt->get_result();
                 $stmtOds->execute();
                 $resultOds = $stmtOds->get_result();
         ?>
-            <div class="card">
-                <h3><?= $row['titulo_projeto'] ?></h3>
-                <p><strong>Curso:</strong> <?= strtoupper($row['curso']) ?></p>
-                <p><strong>Série:</strong> <?= ucfirst($row['serie']) ?></p>
-                <p><strong>Bloco:</strong> <?= $row['bloco'] ?></p>
-                <p><strong>Aluno:</strong> <?php
-                    while ($rowAluno = $resultAlunos->fetch_assoc()) {
-                        $aluno = $rowAluno['nome'];
-                        echo htmlspecialchars($aluno) . "; ";
-                    }
-                ?></p>
-                <p><strong>ODS:</strong> <?php
-                    while ($rowOds = $resultOds->fetch_assoc()) {
-                        $ods = $rowOds['ods'];
-                        echo htmlspecialchars($ods) . "; ";
-                    }
-                ?></p>
-                <p><strong>Orientador:</strong> <?= htmlspecialchars($row['prof_orientador']) ?></p>
-                <p><strong>Posição no Ranking:</strong> <?= $row['posicao'] ?? '?' ?></p>
+
+        <div class="linha-projeto">
+            <div class="container-projeto">
+                <div class="foto-perfil" alt="Foto de Perfil"></div>
+
+                <div class="projetos">
+                    <div class="projeto-nome">
+                        <h3><?php
+                            echo $row['titulo_projeto'] . " - ";
+                            echo ucfirst($row['serie']) . " ";
+                            echo strtoupper($row['curso']); ?>
+                        </h3>
+                    </div>
+                    
+                    <div class="projeto-lugar">
+                        <?php
+                        echo "Sala: " . htmlspecialchars($row['sala']) . " - ";
+                        echo "Stand: " . htmlspecialchars($row['stand']) . " - ";
+                        echo "Bloco: " . htmlspecialchars($row['bloco']);
+                        ?>
+                    </div>
+                    <div class="projeto-lugar">
+                        <p><strong>Aluno:</strong>
+                            <?php
+                            while ($rowAluno = $resultAlunos->fetch_assoc()) {
+                                $aluno = $rowAluno['nome'];
+                                echo htmlspecialchars($aluno) . "; ";
+                            }
+                            ?>
+                        </p>
+                        <p><strong>ODS:</strong>
+                            <?php
+                            while ($rowOds = $resultOds->fetch_assoc()) {
+                                $ods = $rowOds['ods'];
+                                echo htmlspecialchars($ods) . "; ";
+                            }
+                            ?>
+                        </p>
+                        <p><strong>Orientador:</strong>
+                            <?= htmlspecialchars($row['prof_orientador']) ?>
+                        </p>
+                        <p><strong>Posição no Ranking:</strong>
+                            <?= $row['posicao'] ?? '?' ?>
+                        </p>
+                    </div>
+                        <?php endwhile; ?>
+                        <?php else: ?>
+                            <h1>Nenhum trabalho encontrado com os filtros selecionados.</h1>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
-        <?php endwhile; ?>
-        <?php else: ?>
-            <p>Nenhum trabalho encontrado com os filtros selecionados.</p>
-        <?php endif; ?>
+        </div>
+    </main>
+
+    <div id="mySideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="#">Mapa</a>
+        <a href="#">Avaliação</a>
+        <a href="#">Projetos</a>
+        <a href="#">Ranking</a>
+        <a href="#">Cursos</a>
+        <a href="#">Sobre a Etec</a>
+        <a href="#">Configurações</a>
     </div>
+
+    <script>
+        document
+            .getElementById("mobile-menu")
+            .addEventListener("click", function () {
+                this.classList.toggle("active");
+                openMenu();
+            });
+
+        function openMenu() {
+            document.getElementById("mySideMenu").style.width = "250px";
+        }
+
+        function closeMenu() {
+            document.getElementById("mySideMenu").style.width = "0";
+            document.getElementById("mobile-menu").classList.remove("active");
+        }
+    </script>
 </body>
+
 </html>
