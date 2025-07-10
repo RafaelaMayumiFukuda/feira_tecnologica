@@ -92,8 +92,9 @@ $result = $stmt->get_result();
         </div>
     </header>
 
+<div class="tudo">
     <main class="main-projetos">
-
+    
         <div class="filtros">
             <form method="GET">
                 <select name="curso" id="curso" class="botao">
@@ -139,6 +140,8 @@ $result = $stmt->get_result();
                         <?php endforeach; ?>
                 </select>
 
+                <input type="text" name="orientador" id="orientador" class="botao" placeholder="Orientador">
+
                 <input type="text" name="nome" id="nome" class="botao" value="<?= htmlspecialchars($filtroNome ?? null) ?>" placeholder="Nome do Aluno:">
 
                 <input type="text" name="ods" id="ods" class="botao" value="" placeholder="Tema (ODS):">
@@ -171,7 +174,6 @@ $result = $stmt->get_result();
 
         <div class="linha-projeto">
             <div class="container-projeto">
-                <div class="foto-perfil" alt="Foto de Perfil"></div>
 
                 <div class="projetos">
                     <div class="projeto-nome">
@@ -222,6 +224,7 @@ $result = $stmt->get_result();
             </div>
         </div>
     </main>
+    </div>
 
     <div id="mySideMenu" class="side-menu">
       <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
