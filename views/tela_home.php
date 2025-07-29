@@ -47,7 +47,7 @@ session_start();
           </div>
         </div>
         <div class="rateOrg">
-          <a href="#">Avalie-nos</a>
+          <a href="tela_feedback.php">Avalie-nos</a>
         </div>
       </div>
     </main>
