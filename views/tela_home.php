@@ -40,10 +40,10 @@ session_start();
             <?php if (isset($_SESSION['nome'])) {
               echo "Seja bem-vindo(a) " . $_SESSION['nome'] . "!";
             } ?>
-            <a href="#">Mapa</a>
-            <a href="#">Projetos</a>
-            <a href="#">ODS</a>
-            <a href="#">Créditos</a>
+            <a href="tela_mapa.php">Mapa</a>
+            <a href="tela_projetos.php">Projetos</a>
+            <a href="tela_ods.php">ODS</a>
+            <a href="tela_creditos.php">Créditos</a>
           </div>
         </div>
         <div class="rateOrg">
@@ -59,7 +59,7 @@ session_start();
       <a href="tela_ranking.php">Ranking</a>
       <a href="tela_cursos.php">Cursos</a>
       <a href="tela_sobreEtec.php">Sobre a Etec</a>
-      <a href="tela_configuracoes.php">Configurações</a>
+      <a href="tela_acessibilidade.php">Acessibilidade</a>
     </div>
     <script>
       document
