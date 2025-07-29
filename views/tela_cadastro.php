@@ -82,8 +82,35 @@ $verif->logout();
         <button onclick="salvarDados()">Salvar</button>
       </div>
     </div>
+
+    <div id="mySideMenu" class="side-menu">
+      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+      <a href="tela_mapa.php">Mapa</a>
+      <a href="tela_avaliacao.php">Avaliação</a>
+      <a href="tela_projetos.php">Projetos</a>
+      <a href="tela_ranking.php">Ranking</a>
+      <a href="tela_cursos.php">Cursos</a>
+      <a href="tela_sobreEtec.php">Sobre a Etec</a>
+      <a href="tela_acessibilidade.php">Acessibilidade</a>
+    </div>=
     
     <script>
+      document
+        .getElementById("mobile-menu")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          openMenu();
+        });
+
+      function openMenu() {
+        document.getElementById("mySideMenu").style.width = "250px";
+      }
+
+      function closeMenu() {
+        document.getElementById("mySideMenu").style.width = "0";
+        document.getElementById("mobile-menu").classList.remove("active");
+      }
+
       let name = "";
       let email = "";
       let dataNasc = "";
