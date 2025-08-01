@@ -236,6 +236,7 @@ $result = $stmt->get_result();
       <a href="tela_cursos.php">Cursos</a>
       <a href="tela_sobreEtec.php">Sobre a Etec</a>
       <a href="tela_acessibilidade.php">Acessibilidade</a>
+      <a href="" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
     </div>
 
     <script>
