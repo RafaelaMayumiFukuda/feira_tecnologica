@@ -35,7 +35,8 @@ if(isset($_POST['nameuser']) && ($_POST['emailuser']) && ($_POST['passuser']) &&
         $stmt->close();
         //fecha a conexão com o banco para liberar memória
         $mysqli->close();
-        header('Location: ../views/tela_login.php');
+
+        echo "<script>window.location.href = '../views/tela_login.php'</script>";
         exit();
     };
 }
