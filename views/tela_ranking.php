@@ -25,6 +25,7 @@
       <div class="ORGInfoHeader">
         <h1>Inicio</h1>
       </div>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
     <main class="main-ranking">

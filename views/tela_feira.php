@@ -40,6 +40,7 @@
                 <img src="" alt="" class="feira-imagem"></img>
             </div>
         </section>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

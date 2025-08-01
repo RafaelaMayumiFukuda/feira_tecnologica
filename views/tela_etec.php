@@ -33,6 +33,7 @@
         <button class="btn">Projetos</button>
         <button class="btn">Cursos</button>
       </div>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

@@ -223,6 +223,7 @@ $result = $stmt->get_result();
                 </div>
             </div>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
     </div>
 

@@ -37,6 +37,7 @@
 
       <button type="submit">Enviar</button>
     </form> 
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
   </div>
 </body>
 </html>

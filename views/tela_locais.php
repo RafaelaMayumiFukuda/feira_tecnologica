@@ -24,6 +24,7 @@ require_once '../back/connect.php';
     <div class="ORGInfoHeader">
       <h1>Locais</h1>
     </div>
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
   </header>
 
   <div id="mySideMenu" class="side-menu">

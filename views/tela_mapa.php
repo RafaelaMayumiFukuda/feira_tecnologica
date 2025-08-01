@@ -37,6 +37,7 @@
                         <div class="ORGInfoHeader">
                             <h1>Locais</h1><!--Nome da tela (ex. Avaliação)-->
                         </div>
+                        <button class="btn-voltar" onclick="history.back()">Voltar</button>
                     </header>
 
                     <div id="mySideMenu" class="side-menu">

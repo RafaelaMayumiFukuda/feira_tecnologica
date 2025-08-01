@@ -83,6 +83,8 @@ $verif->logout();
       </div>
     </div>
 
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
+
     <div id="mySideMenu" class="side-menu">
       <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
       <a href="tela_mapa.php">Mapa</a>

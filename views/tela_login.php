@@ -43,6 +43,7 @@ $verif->logout();
           <button type="submit">Entrar</button>
         </div>
       </form>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </div>
 
     <div class="cadastrar-container">

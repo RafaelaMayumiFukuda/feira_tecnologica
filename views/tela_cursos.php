@@ -85,34 +85,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Página Configurações -->
-    <div id="paginaConfiguracoes" style="display:none">
-      <div class="config-box">
-        <label for="textSize">Tamanho do Texto</label>
-        <div class="slider-container">
-          <span id="textSizeValue">15</span>
-          <input type="range" id="textSize" min="10" max="30" value="15" />
-        </div>
-      </div>
-
-      <div class="config-box">
-        <label for="colorBlind">Daltonismo</label>
-        <select id="colorBlind">
-          <option value="nenhum">Nenhum</option>
-          <option value="protanopia">Protanopia</option>
-          <option value="deuteranopia">Deuteranopia</option>
-          <option value="tritanopia">Tritanopia</option>
-        </select>
-      </div>
-
-      <div class="libras-option">
-        <span>Libras</span>
-        <input type="checkbox" id="librasToggle" />
-      </div>
-    </div>
-    <!-- Fim página Configurações -->
-
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
   </main>
 
   <div id="mySideMenu" class="side-menu">

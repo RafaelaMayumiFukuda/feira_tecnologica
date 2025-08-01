@@ -175,6 +175,7 @@
                 ?>
             </div>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">
