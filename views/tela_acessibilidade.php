@@ -51,6 +51,9 @@
         <input type="checkbox" id="librasToggle" />
       </div>
     </div>
+
+    <button class="btn-voltar" onclick="history.back()">Voltar</button>
+
     <!-- Fim página Configurações -->
 
   </main>
