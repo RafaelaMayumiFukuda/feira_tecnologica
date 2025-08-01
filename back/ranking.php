@@ -11,6 +11,8 @@ $result_nomes = $stmt->get_result();
 // cria um array vazio para guardar o ranking
 $ranking = [];
 
+$resultados = [];
+
 // se realmente encontrar os nomes
 if ($result_nomes->num_rows > 0) {
 
@@ -90,10 +92,23 @@ if ($result_nomes->num_rows > 0) {
         return $b["qtd45"] - $a["qtd45"];
     });
 
+
     // mostra o ranking tudo certo aqui embaixo  
     $posicao = 1;
     foreach ($ranking as $item) {
-        echo "🏆 " . $posicao . "º lugar - Projeto: " . $item["nome"] . " | Pontos: " . $item["total"] . "<br>";
+        $linha = '
+        <div class="container-projeto">
+            <div class="foto-perfil" alt="Foto de Perfil"></div>
+    
+            <div class="projetos">
+                <div class="projeto-nome">Projeto ' . htmlspecialchars($item["nome"]) . ' - ' . htmlspecialchars($item["curso"]) . ' 
+                    <div class="colocacao">' . $posicao . 'º lugar</div>
+                </div>
+                <div class="projeto-lugar">Sala ' . htmlspecialchars($item["sala"]) . ', Stand ' . htmlspecialchars($item["stand"]) . ' - Bloco ' . htmlspecialchars($item["bloco"]) . '</div>
+            </div>
+        </div>';
+        
+        $resultados[] = $linha;
         $posicao++;
     }
 

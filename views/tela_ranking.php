@@ -1,5 +1,5 @@
 <?php
-//require_once '../back/ranking.php';
+ require_once '../back/ranking.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,23 +28,11 @@
     </header>
 
     <main class="main-ranking">
-        <div class="container-projeto">
-            <div class="foto-perfil" alt="Foto de Perfil"></div>
-
-            <div class="projetos">
-                <div class="projeto-nome">Projeto nome - TI <div class="colocacao">a</div></div>
-                <div class="projeto-lugar">Sala 2, Stand 5 - Bloco B</div>
-            </div>
-        </div>
-
-        <div class="container-projeto">
-            <div class="foto-perfil" alt="Foto de Perfil"></div>
-
-            <div class="projetos">
-                <div class="projeto-nome">Projeto nome - TI <div class="colocacao">a</div></div>
-                <div class="projeto-lugar">Sala 2, Stand 5 - Bloco B</div>
-            </div>
-        </div>
+      <?php
+          foreach ($resultados as $linha) {
+              echo $linha;
+          }
+        ?>
     </main>
 
     <div id="mySideMenu" class="side-menu">
