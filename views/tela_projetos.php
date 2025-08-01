@@ -2,6 +2,10 @@
 #Modificado por Miguel Luiz Sommerfeld às 16:53 no dia 10/06/2025 - Team Leader (Turma B)
 require_once '../back/connect.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Arrays para os selects
 $blocos = ['A', 'B'];
 
@@ -236,7 +240,9 @@ $result = $stmt->get_result();
       <a href="tela_cursos.php">Cursos</a>
       <a href="tela_sobreEtec.php">Sobre a Etec</a>
       <a href="tela_acessibilidade.php">Acessibilidade</a>
-      <a href="" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+      <?php if(isset($_SESSION['id'])): ?>
+      <a href="../back/logout.php" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+      <?php endif; ?>
     </div>
 
     <script>

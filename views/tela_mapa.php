@@ -2,6 +2,10 @@
     // CONEXÃO COM BANCO
     require_once '../back/connect.php';
 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
     // PEGAR PARÂMETROS
     $bloco = $_GET['bloco'] ?? null;
     $sala = $_GET['sala'] ?? null;
@@ -49,7 +53,7 @@
                         <a href="tela_cursos.php">Cursos</a>
                         <a href="tela_sobreEtec.php">Sobre a Etec</a>
                         <a href="tela_acessibilidade.php">Acessibilidade</a>
-                        <a href="" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+                        <a href="../back/logout.php" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
                     </div>
                 </nav>
         HTML;

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,11 +33,6 @@ session_start();
     </header>
     <main>
       <div>
-        <?php if(!isset($_SESSION['id'])) : ?>
-          <div class="a0">
-            <a href="tela_login.php">Entrar</a>
-          </div>
-        <?php endif; ?>
         <div class="a0">
             <?php if (isset($_SESSION['nome'])) {
               echo "Seja bem-vindo(a) " . $_SESSION['nome'] . "!";
@@ -61,7 +58,9 @@ session_start();
       <a href="tela_cursos.php">Cursos</a>
       <a href="tela_sobreEtec.php">Sobre a Etec</a>
       <a href="tela_acessibilidade.php">Acessibilidade</a>
-      <a href="" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+      <?php if(isset($_SESSION['id'])): ?>
+      <a href="../back/logout.php" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+      <?php endif; ?>
     </div>
     <script>
       document

@@ -1,12 +1,15 @@
 <?php
-  session_start();
-  if (!isset($_SESSION['id'])) {
-      echo "<script>
-        alert('Você precisa estar logado para nos avaliar.');
-        window.history.back();
-      </script>";
-      exit();
-  }
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['id'])) {
+    echo "<script>
+      alert('Você precisa estar logado para nos avaliar.');
+      window.history.back();
+    </script>";
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
