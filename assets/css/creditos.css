@@ -12,7 +12,8 @@
     --cor-texto-primario: #333;           /* Cor principal do texto */
     --cor-texto-secundario: #666;        /* Cor secundária do texto */
     --overlay: rgba(0, 0, 0, 0.4);        /* Overlay escuro (caso queira usar) */
-    --FONTTitulo: Karantina;
+    --FONTTitulo: Grenze;
+    --FONTPadrao: Roboto;
     --FONTTituloSIZE: 20px;
   }
   

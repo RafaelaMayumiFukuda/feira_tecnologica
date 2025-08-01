@@ -1,8 +1,9 @@
 :root {
   /* INÍCIO ROOT TITULO */
-  --FONTTitulo: Karantina;
+  --FONTTitulo: Grenze;
+  --FONTPadrao: Roboto;
   --FONTTituloSIZE: 20px;
-  --FONTBTNSMenu: arial;
+  --FONTBTNSMenu: Roboto;
   --COLORBTNSMenu: black;
   --BACKGROUNDCOLORBTNSMenu: rgba(255, 255, 255, 0.5);
   /* FIM ROOT TITULO */
