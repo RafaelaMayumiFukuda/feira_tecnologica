@@ -1,0 +1,20 @@
+{
+    "name": "projetofeira/site",
+    "description": "Projeto da feira tecnológica - 2025",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "feiratec\\feiratec\\": "back/classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "MiguelSommerf",
+            "email": "miguel.sommerfeldluiz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
