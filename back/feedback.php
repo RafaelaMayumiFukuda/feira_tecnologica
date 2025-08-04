@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comentario = isset($_POST['comentario']) ? $_POST['comentario'] : null;
     $comentario = trim($comentario) === '' ? null : $comentario;
 
-    //Verifica se o usuário já enviou um comentário ou nota
+    //Verifica se o usuário já enviou um feedback
     $select = "SELECT id_feedback FROM tb_feedback WHERE id_users = ?";
     $stmt = $mysqli->prepare($select);
     $stmt->bind_param("i", $id);
@@ -51,14 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->close();
             $mysqli->close();
             echo "<script>
-                alert('Comentário enviado!');
+                alert('Feedback enviado!');
                 window.history.back();
             </script>";
         } else {
             $stmt->close();
             $mysqli->close();
             echo "<script>
-                alert('Erro ao enviar comentário.');
+                alert('Erro ao enviar feedback.');
                 window.history.back();
             </script>";
         }
