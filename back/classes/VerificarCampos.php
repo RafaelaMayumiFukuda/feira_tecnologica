@@ -1,6 +1,7 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
-require_once '../back/connect.php';
+require_once __DIR__ . '/../../config/connect.php';
+
 class VerificarCampos{
     private $mysqli;
 

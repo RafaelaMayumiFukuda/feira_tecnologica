@@ -1,5 +1,5 @@
 <?php
-require_once '../back/connect.php';
+require_once '../config/connect.php';
 
 // Pega todos os nomes e id's diferentes dos projetos que receberam votos
 $sql_nomes = "SELECT DISTINCT v.id_projetos, p.titulo_projeto FROM tbl_projetos as p

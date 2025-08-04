@@ -1,6 +1,6 @@
 <?php
     // CONEXÃO COM BANCO
-    require_once '../back/connect.php';
+    require_once '../config/connect.php';
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();

@@ -1,5 +1,5 @@
 <?php
-require_once 'connect.php';
+require_once '../config/connect.php';
 
 session_start();
 //Chama o banco, verifica o método de requisição, muda a nota para inteiro e insere os dados no banco.

@@ -1,6 +1,6 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
-require_once 'connect.php';
+require_once '../config/connect.php';
 
 if(empty($dataJSON) && empty($data)){
     $dataJSON = file_get_contents("php://input");

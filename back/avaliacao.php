@@ -1,6 +1,6 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
-require_once 'connect.php';
+require_once '../config/connect.php';
 session_start();
 
 if (!isset($_SESSION['id'])) {

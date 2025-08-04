@@ -1,6 +1,6 @@
 <?php
 //Codado por Miguel Luiz Sommerfeld - 3°F Turma B
-require '../vendor/config/smtp_config.php';
+require __DIR__ . '/../../config/smtp_config.php';
 
 use PHPMailer\PHPMailer\Exception;
 

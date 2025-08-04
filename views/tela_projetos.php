@@ -1,6 +1,6 @@
 <?php
 #Modificado por Miguel Luiz Sommerfeld às 16:53 no dia 10/06/2025 - Team Leader (Turma B)
-require_once '../back/connect.php';
+require_once '../config/connect.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
