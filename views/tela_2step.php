@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <form action="../back/redefinir.php" method="post">
             <h3>Digite a sua nova senha</h3>
             <label>Senha</label>
-            <input type="text" name="novaSenha" required>
+            <input type="text" name="novaSenha" required minlength="8">
             <button type="submit">Enviar</button>
         </form>
     <?php elseif (!isset($_SESSION['email'])): ?>
