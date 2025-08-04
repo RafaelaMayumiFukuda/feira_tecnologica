@@ -30,6 +30,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <div class="ORGInfoHeader">
         <h1>ETEC MCM</h1>
       </div>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
     <main class="main-sobreEtec">
@@ -52,7 +53,6 @@ if (session_status() === PHP_SESSION_NONE) {
           Medeiros, em homenagem à ex-diretora, falecida em 2015.
         </p>
       </div>
-      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

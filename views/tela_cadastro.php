@@ -53,6 +53,7 @@ $verif->logout();
           <button onclick="checkSenha()" type="submit">Cadastrar</button>
         </div>
       </form>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </div>
 
     <div class="login-container">
@@ -83,19 +84,6 @@ $verif->logout();
       </div>
     </div>
 
-    <button class="btn-voltar" onclick="history.back()">Voltar</button>
-
-    <div id="mySideMenu" class="side-menu">
-      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
-      <a href="tela_mapa.php">Mapa</a>
-      <a href="tela_avaliacao.php">Avaliação</a>
-      <a href="tela_projetos.php">Projetos</a>
-      <a href="tela_ranking.php">Ranking</a>
-      <a href="tela_cursos.php">Cursos</a>
-      <a href="tela_sobreEtec.php">Sobre a Etec</a>
-      <a href="tela_acessibilidade.php">Acessibilidade</a>
-    </div>
-    
     <script>
       document
         .getElementById("mobile-menu")

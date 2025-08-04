@@ -29,6 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
       <div class="ORGInfoHeader">
         <h1>Feira</h1>
       </div>
+      <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
     <main>
@@ -45,7 +46,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 <img src="" alt="" class="feira-imagem"></img>
             </div>
         </section>
-        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

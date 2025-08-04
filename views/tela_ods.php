@@ -27,6 +27,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="ORGInfoHeader">
             <h1>ODS's</h1>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>    
 
     <main>
@@ -167,7 +168,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="caption">O Objetivo 17 visa fortalecer a implementação e revitalizar a parceria global para o desenvolvimento sustentável. Busca mobilizar recursos financeiros, promover transferências de tecnologia e capacitação, e fomentar a cooperação entre os países para alcançar os ODS.</div>
             </div>
         </div>
-        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

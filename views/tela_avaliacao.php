@@ -19,6 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="ORGInfoHeader">
             <h1>Avaliação</h1>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
     <main>
@@ -70,7 +71,6 @@ if (session_status() === PHP_SESSION_NONE) {
             <textarea class="avaliacao-textarea" placeholder="Deixe um comentário..."></textarea>
             <button class="avaliacao-button" id="">Enviar</button>
         </div>
-        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
 
     <div id="mySideMenu" class="side-menu">

@@ -94,6 +94,7 @@ $result = $stmt->get_result();
         <div class="ORGInfoHeader">
             <h1>Projetos</h1>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
 <div class="tudo">
@@ -227,7 +228,6 @@ $result = $stmt->get_result();
                 </div>
             </div>
         </div>
-        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </main>
     </div>
 

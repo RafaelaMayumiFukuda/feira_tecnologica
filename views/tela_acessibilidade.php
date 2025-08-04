@@ -28,11 +28,12 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="ORGInfoHeader">
             <h1 class="h1-ranking">Inicio</h1>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
   <main>
     <!-- Página Configurações -->
-    <div id="paginaConfiguracoes" style="display:none">
+    <div id="paginaConfiguracoes">
       <div class="config-box">
         <label for="textSize">Tamanho do Texto</label>
         <div class="slider-container">
@@ -57,7 +58,6 @@ if (session_status() === PHP_SESSION_NONE) {
       </div>
     </div>
 
-    <button class="btn-voltar" onclick="history.back()">Voltar</button>
 
     <!-- Fim página Configurações -->
 
