@@ -50,7 +50,7 @@ $verif->logout();
 
         <div class="botoes">
           <div class="g_id_signin" data-type="standard"></div>
-          <button type="submit">Cadastrar</button>
+          <button onclick="checkSenha()" type="submit">Cadastrar</button>
         </div>
       </form>
     </div>
@@ -175,6 +175,22 @@ $verif->logout();
       }
   </script>
   <script>
+      // Confirmar senha
+      function checkSenha () {
+        const formulario = document.getElementById('cadastroForm');
+
+        formulario.addEventListener('submit', function(e){
+          const senha = document.getElementById('senha').value;
+          const confirmar_senha = document.getElementById('confirmar-senha').value;
+
+          if (senha !== confirmar_senha) {
+            e.preventDefault();
+            alert('As senhas precisam coincidir. Por favor, confirme a sua senha.');
+            return;
+          }
+        })
+      }
+
       let piscando = { olho1: true, olho2: true };
       let intervalos = {};
 
