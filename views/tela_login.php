@@ -36,7 +36,7 @@ $verif->logout();
         </div>
 
         <!--  aqui é necessário trocar o caminho para puxar a página certa  -->
-        <a href="#" class="esqueci">Esqueci minha senha</a>
+        <a href="../views/tela_2step.php" class="esqueci">Esqueci minha senha</a>
 
         <div class="botoes">
           <div class="g_id_signin" data-type="standard"></div>
