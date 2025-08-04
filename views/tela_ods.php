@@ -31,6 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <main>
         <div class="container-ods">
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods1.jpg" alt="ODS 1 - Erradicação da pobreza">
@@ -46,7 +47,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 2 - Fome zero e agricultura sustentável</div>
                 <div class="caption">O Objetivo 2 visa acabar com a fome até 2030, garantir acesso universal a alimentos nutritivos, erradicar a desnutrição, aumentar a produtividade e renda de pequenos produtores, promover a agricultura sustentável e resiliente, preservar a diversidade genética, ampliar investimentos no setor agrícola, corrigir distorções no comércio mundial de alimentos e assegurar mercados alimentares estáveis e acessíveis.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods3.png" alt="ODS 3 - Saúde e Bem-Estar">
@@ -62,7 +65,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 4 - Educação de Qualidade</div>
                 <div class="caption">O Objetivo 4 visa garantir educação inclusiva, equitativa e de qualidade para todos, desde a primeira infância até o ensino superior, promovendo o aprendizado ao longo da vida. Busca eliminar desigualdades, ampliar o acesso à educação técnica e profissional, fortalecer habilidades para o trabalho, assegurar alfabetização e conhecimento básico, fomentar valores sustentáveis e investir em infraestrutura escolar e na formação de professores, especialmente nos países em desenvolvimento.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods5.png" alt="ODS 5 - Igualdade de Gênero">
@@ -78,7 +83,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 6 - Água Potável e Saneamento</div>
                 <div class="caption">O Objetivo 6 visa garantir a disponibilidade e a gestão sustentável da água e do saneamento para todos. Busca assegurar o acesso universal e equitativo à água potável e segura, melhorar a qualidade da água, aumentar a eficiência do uso da água, proteger e restaurar ecossistemas relacionados à água, e promover a participação comunitária na gestão dos recursos hídricos.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods7.png" alt="ODS 7 - Energia Acessível e Limpa">
@@ -94,7 +101,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 8 - Trabalho Decente e Crescimento Econômico</div>
                 <div class="caption">O Objetivo 8 visa promover o crescimento econômico sustentado, inclusivo e sustentável, o emprego pleno e produtivo e o trabalho decente para todos. Busca aumentar a produtividade econômica, promover políticas que incentivem a criação de empregos, garantir condições de trabalho seguras e protegidas, e apoiar o desenvolvimento de pequenas e médias empresas.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods9.png" alt="ODS 9 - Indústria, Inovação e Infraestrutura">
@@ -110,7 +119,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 10 - Redução das Desigualdades</div>
                 <div class="caption">O Objetivo 10 visa reduzir as desigualdades dentro dos países e entre eles. Busca promover a inclusão social, econômica e política de todos, independentemente de sua origem, e garantir oportunidades iguais para todos. Isso inclui a promoção de políticas que favoreçam a igualdade de renda, o acesso a serviços básicos e a eliminação de discriminações.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods11.png" alt="ODS 11 - Cidades e Comunidades Sustentáveis">
@@ -126,7 +137,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 12 - Consumo e Produção Responsáveis</div>
                 <div class="caption">O Objetivo 12 visa garantir padrões de consumo e produção sustentáveis. Busca promover a eficiência dos recursos e a energia, e incentivar a adoção de práticas sustentáveis por empresas e consumidores. Isso inclui a redução de resíduos, a promoção da reciclagem e a conscientização sobre o consumo responsável.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods13.png" alt="ODS 13 - Ação Contra a Mudança Global do Clima">
@@ -142,7 +155,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="text">ODS 14 - Vida na Água</div>
                 <div class="caption">O Objetivo 14 visa conservar e promover o uso sustentável dos oceanos, mares e recursos marinhos para o desenvolvimento sustentável. Busca proteger a biodiversidade marinha, reduzir a poluição dos oceanos e promover a pesca sustentável, garantindo a saúde dos ecossistemas aquáticos e a segurança alimentar das populações que dependem deles.</div>
             </div>
+            </div>
 
+            <div class="ods-dupla">
             <div class="component" onclick="expandComponent(this)">
                 <div class="image-ods">
                     <img src="../assets/img/ods15.png" alt="ODS 15 - Vida Terrestre">
@@ -157,6 +172,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="text">ODS 16 - Paz, Justiça e Instituições Eficazes</div>
                 <div class="caption">O Objetivo 16 visa promover sociedades pacíficas e inclusivas, proporcionar acesso à justiça para todos e construir instituições eficazes, responsáveis e inclusivas em todos os níveis. Busca reduzir a violência, combater a corrupção e promover a participação cidadã nas decisões que afetam suas vidas.</div>
+            </div>
             </div>
 
             <div class="component" onclick="expandComponent(this)">
