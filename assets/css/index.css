@@ -1,3 +1,7 @@
+ body{
+  height: 100vh;
+ }
+ 
  /* Menu Toggle */
       .menu-toggle {
         display: flex;
