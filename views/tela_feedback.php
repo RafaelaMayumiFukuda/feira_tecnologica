@@ -19,7 +19,24 @@ if (!isset($_SESSION['id'])) {
   <link rel="stylesheet" href="../assets/css/feedback.css">
   <title>Feedback</title>
 </head>
-<body>
+<body class="telaFeedback">
+  <header>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <div class="logo-container">
+        <img src="../assets/img/etecmcm.png" alt="Logo MCM" />
+      </div>
+
+      <div class="ORGInfoHeader">
+        <h1>Feedback</h1>
+      </div>
+    </header>
+    <div class="main-container">
+    
 <a href="tela_home.php" class="voltar">Voltar</a>
   <div class="feedback-form">
     <h2>Envie seu Feedback</h2>
@@ -38,9 +55,39 @@ if (!isset($_SESSION['id'])) {
       <label for="comentario">Comentário:</label>
       <textarea id="comentario" name="comentario" rows="4"></textarea>
 
-      <button type="submit">Enviar</button>
+      <button type="submit" class="enviar">Enviar</button>
     </form> 
+   
     <button class="btn-voltar" onclick="history.back()">Voltar</button>
   </div>
+   </div>
+  <div id="mySideMenu" class="side-menu">
+      <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+      <a href="tela_mapa.php">Mapa</a>
+      <a href="tela_avaliacao.php">Avaliação</a>
+      <a href="tela_projetos.php">Projetos</a>
+      <a href="tela_ranking.php">Ranking</a>
+      <a href="tela_cursos.php">Cursos</a>
+      <a href="tela_sobreEtec.php">Sobre a Etec</a>
+      <a href="tela_acessibilidade.php">Acessibilidade</a>
+      <?php if(isset($_SESSION['id'])): ?>
+      <a href="../back/logout.php" class="deslogar" id="deslogar" name="deslogar">Sair da Conta</a>
+      <?php endif; ?>
+    </div>
+    <script>
+      document.getElementById('mobile-menu').addEventListener('click', function() {
+        this.classList.toggle('active');
+        openMenu();
+      });
+
+      function openMenu() {
+        document.getElementById('mySideMenu').style.width = '250px';
+      }
+
+      function closeMenu() {
+        document.getElementById('mySideMenu').style.width = '0';
+        document.getElementById('mobile-menu').classList.remove('active');
+      }
+    </script>
 </body>
 </html>
