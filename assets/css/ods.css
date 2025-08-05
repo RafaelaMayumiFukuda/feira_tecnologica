@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100vh;
+    height: 256vh;
     width: 100%;
 }
 
@@ -211,7 +211,7 @@ h1 {
 .component.expanded .caption {
     display: block;
     opacity: 1;
-    max-height: 200px;
+    max-height: 100%;
 }
 
 /* Animation */
