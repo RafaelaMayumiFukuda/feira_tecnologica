@@ -4,9 +4,9 @@ require '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-define("SMTP_HOST", "sandbox.smtp.mailtrap.io");
+define("SMTP_HOST", "http://smtp.gmail.com/");
 define("SMTP_PORT", 587);
-define("SMTP_USER", "");
+define("SMTP_USER", "feiratecnologica2025@gmail.com");
 define("SMTP_PASSWORD", "");
 
 $email = new PHPMailer();
