@@ -34,8 +34,7 @@ if($stmt->num_rows == 1){
         $_SESSION['id'] = $id_user;
         $_SESSION['nome'] = $nome_user;
 
-        echo "<script>alert('Logado com sucesso!')</script>";
-        header('Location: ../views/tela_home.php');
+        echo "<script>window.location.href = '../views/tela_home.php'</script>";
         exit();
     }else{
         echo "<script>alert('Usuário ou senha incorretos.')</script>";
