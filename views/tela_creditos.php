@@ -61,7 +61,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         echo "<h3>{$pessoa[2]}</h3>";
                         echo "<p>me encontre:</p>";
                         echo "<div class='div-btn-cred'>";
-                        if ($pessoa[4]) echo "<a class='btn-git' href='{$pessoa[4]}' target='_blank' rel='noopener noreferrer'>Git</a>";
+                        if ($pessoa[4]) echo "<a class='btn-git' href='{$pessoa[4]}' target='_blank' rel='noopener noreferrer'>GitHub</a>";
                         if ($pessoa[3]) echo "<a class='btn-linkedin' href='{$pessoa[3]}' target='_blank' rel='noopener noreferrer'>LinkedIn</a>";
                         echo "</div></div></div>";
                     }
@@ -89,7 +89,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         echo "<div class='cargo'>";
                         echo "<h2>{$pessoa[0]}</h2>";
                         echo "<h3>{$pessoa[2]}</h3>";
-                        echo "<p>me encontre:</p>";
+                        echo "<p>Me encontre:</p>";
                         echo "<div class='div-btn-cred'>";
                         if ($pessoa[4]) echo "<a class='btn-git' href='{$pessoa[4]}' target='_blank' rel='noopener noreferrer'>Git</a>";
                         if ($pessoa[3]) echo "<a class='btn-linkedin' href='{$pessoa[3]}' target='_blank' rel='noopener noreferrer'>LinkedIn</a>";
