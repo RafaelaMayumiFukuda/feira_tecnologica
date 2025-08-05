@@ -154,7 +154,16 @@
         $limit = 8;
         $offset = ($pagina - 1) * $limit;
 
-        $stmt = $mysqli->prepare("SELECT titulo_projeto, descricao_projeto, ods, stand, prof_orientador FROM tbl_projetos WHERE bloco = ? AND sala = ? ORDER BY posicao_projeto ASC LIMIT ? OFFSET ?");
+        // Modificação: JOIN entre tbl_projetos e ods_projeto
+        $stmt = $mysqli->prepare("
+            SELECT p.titulo_projeto, p.descricao_projeto, o.ods, p.stand, p.prof_orientador 
+            FROM tbl_projetos p
+            LEFT JOIN ods_projeto op ON p.id_projetos = op.id_projetos
+            LEFT JOIN tbl_ods o ON op.id_ods = o.id_ods
+            WHERE p.bloco = ? AND p.sala = ? 
+            ORDER BY p.titulo_projeto ASC 
+            LIMIT ? OFFSET ?
+        ");
         $stmt->bind_param("ssii", $bloco, $sala, $limit, $offset);
         $stmt->execute();
         $result = $stmt->get_result();
