@@ -32,7 +32,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
   <main>
     <!-- Página Configurações -->
-    <div id="paginaConfiguracoes" style="display:none">
+    <div id="paginaConfiguracoes">
       <div class="config-box">
         <label for="textSize">Tamanho do Texto</label>
         <div class="slider-container">
