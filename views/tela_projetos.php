@@ -94,6 +94,7 @@ $result = $stmt->get_result();
         <div class="ORGInfoHeader">
             <h1>Projetos</h1>
         </div>
+        <button class="btn-voltar" onclick="history.back()">Voltar</button>
     </header>
 
 <div class="tudo">
@@ -221,13 +222,13 @@ $result = $stmt->get_result();
                     </div>
                         <?php endwhile; ?>
                         <?php else: ?>
-                            <h1>Nenhum trabalho encontrado com os filtros selecionados.</h1>
+                            <p>Nenhum trabalho encontrado com os filtros selecionados.</p>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn-voltar" onclick="history.back()">Voltar</button>
+        
     </main>
     </div>
 
